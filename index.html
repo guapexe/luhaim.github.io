@@ -1,3 +1,159 @@
-<h1>Book</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>US Bank Logs - Fresh & Verified</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #0f0f0f;
+            color: #00ff00;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(to right, #000, #1a1a1a);
+            padding: 30px;
+            text-align: center;
+            border-bottom: 3px solid #00ff00;
+        }
+        h1 { margin: 0; font-size: 2.8em; }
+        h2 { color: #00cc00; }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+        .product {
+            background: #1a1a1a;
+            border: 2px solid #00ff00;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            display: flex;
+            justify-content: space-between;
+        }
+        .price {
+            font-size: 1.8em;
+            color: #00ff00;
+            font-weight: bold;
+        }
+        button {
+            background: #00ff00;
+            color: black;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #00cc00;
+        }
+        .telegram {
+            background: #0088cc;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            font-size: 1.5em;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        .warning {
+            color: #ffaa00;
+            font-size: 0.9em;
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
 
-<h2>Chapter 1</h2>
+    <header>
+        <h1>US BANK LOGS</h1>
+        <p><strong>Fresh • Verified • High Balance • Instant Delivery</strong></p>
+    </header>
+
+    <div class="container">
+
+        <div class="telegram">
+            <strong>JOIN OUR TELEGRAM FOR DAILY DROPS & UPDATES</strong><br><br>
+            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.6em;">
+                → t.me/yourcashgang ←
+            </a>
+            <p style="margin-top:15px; font-size:1.1em;">Fastest updates • Replacement guarantee • Bulk discounts</p>
+        </div>
+
+        <h2 style="text-align:center;">Available Bank Logs - Updated 5 minutes ago</h2>
+
+        <div class="product">
+            <div>
+                <h3>Chase Bank - High Balance</h3>
+                <p>Online Access + Email + SSN + Phone • Balance: $18,000 - $45,000</p>
+            </div>
+            <div style="text-align:right;">
+                <div class="price">$85</div>
+                <button onclick="buyNow('Chase High Balance - $85')">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div>
+                <h3>Wells Fargo - Business Account</h3>
+                <p>Full Login • Routing + Account Number • Balance: $27,000+</p>
+            </div>
+            <div style="text-align:right;">
+                <div class="price">$110</div>
+                <button onclick="buyNow('Wells Fargo Business - $110')">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div>
+                <h3>Bank of America - Verified</h3>
+                <p>Fullz Login • Security Questions • Balance: $9,000 - $65,000</p>
+            </div>
+            <div style="text-align:right;">
+                <div class="price">$65</div>
+                <button onclick="buyNow('BoA Verified - $65')">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div>
+                <h3>US Bank + Cash App Combo</h3>
+                <p>Login + Linked Cash App • Balance: $12,000+</p>
+            </div>
+            <div style="text-align:right;">
+                <div class="price">$95</div>
+                <button onclick="buyNow('US Bank + Cash App - $95')">Buy Now</button>
+            </div>
+        </div>
+
+        <div class="telegram" style="margin-top:50px;">
+            <strong>ALL PURCHASES GO THROUGH OUR TELEGRAM</strong><br><br>
+            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:1.8em;">
+                t.me/yourcashgang
+            </a>
+            <p>Instant delivery after payment (Crypto only)</p>
+        </div>
+
+        <p class="warning">
+            ⚠️ All accounts are checked before sale. Replacements provided within 6 hours if login fails.<br>
+            We only accept Bitcoin, USDT, and Monero.
+        </p>
+
+    </div>
+
+    <script>
+        function buyNow(item) {
+            alert("Order for " + item + " has been received.\n\nPlease message us on Telegram:\nhttps://t.me/yourcashgang");
+            window.open("https://t.me/yourcashgang", "_blank");
+        }
+    </script>
+
+</body>
+</html>
