@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -142,8 +143,8 @@
         <div id="tab0">
             <div class="telegram">
                 <strong>JOIN OUR TELEGRAM FOR DAILY FRESH LOGS</strong><br><br>
-                <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.8em;">
-                    → t.me/yourcashgang ←
+                <a href="https://t.me/luhaimlogs" target="_blank" style="color:white; text-decoration:none; font-size:1.8em;">
+                    → t.me/luhaimlogs ←
                 </a>
             </div>
 
@@ -240,14 +241,14 @@
             <button class="copy-btn" onclick="copyBTCAddress()">Copy BTC Address</button>
             <p style="margin-top:15px; font-size:0.9em; color:#aaa;">
                 Minimum order: $50<br>
-                Send only BTC to this address. No refunds for wrong amount.
+                Send only BTC to this address.
             </p>
         </div>
 
         <div class="telegram">
             <strong>AFTER PAYMENT — SEND TXID TO OUR TELEGRAM</strong><br><br>
-            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:2em;">
-                t.me/yourcashgang
+            <a href="https://t.me/luhaimlogs" target="_blank" style="color:white; font-size:2em;">
+                t.me/luhaimlogs
             </a>
             <p style="margin-top:15px;">We deliver logs within 10 minutes after confirmation</p>
         </div>
@@ -273,18 +274,17 @@
         }
 
         function buyNow(item) {
-            alert("Order for " + item + " received!\n\nPlease send payment to the Bitcoin wallet shown above.\nThen message us on Telegram with the TXID.");
-            window.open("https://t.me/yourcashgang", "_blank");
+            alert("Order for " + item + " received!\n\nPlease send payment to the Bitcoin wallet above.\nThen message us on Telegram with the TXID.");
+            window.open("https://t.me/luhaimlogs", "_blank");
         }
 
         function copyBTCAddress() {
             const address = document.getElementById("btcAddress").innerText;
             navigator.clipboard.writeText(address).then(() => {
-                const originalText = event.target.innerText;
-                event.target.innerText = "COPIED!";
-                setTimeout(() => {
-                    event.target.innerText = originalText;
-                }, 2000);
+                const btn = event.target;
+                const originalText = btn.innerText;
+                btn.innerText = "COPIED!";
+                setTimeout(() => { btn.innerText = originalText; }, 2000);
             });
         }
     </script>
