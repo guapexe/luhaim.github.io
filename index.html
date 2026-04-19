@@ -19,6 +19,27 @@
             border-bottom: 4px solid #00ff41;
         }
         h1 { margin: 0; font-size: 3em; text-shadow: 0 0 10px #00ff41; }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            background: #111;
+            padding: 15px 0;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .tab {
+            padding: 12px 25px;
+            background: #1a1a1a;
+            border: 2px solid #00ff41;
+            color: #00ff41;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 6px;
+        }
+        .tab.active {
+            background: #00ff41;
+            color: black;
+        }
         .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
         
         .product {
@@ -26,7 +47,7 @@
             border: 2px solid #00ff41;
             border-radius: 10px;
             padding: 20px;
-            margin: 25px 0;
+            margin: 20px 0;
             display: flex;
             align-items: center;
             gap: 20px;
@@ -39,9 +60,7 @@
             padding: 8px;
             border-radius: 6px;
         }
-        .details {
-            flex: 1;
-        }
+        .details { flex: 1; }
         .price {
             font-size: 2em;
             color: #00ff41;
@@ -58,7 +77,6 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 6px;
-            margin-top: 10px;
         }
         button:hover { background: #00cc33; }
 
@@ -77,96 +95,161 @@
             margin: 50px 0;
             font-size: 0.95em;
         }
+        .hidden { display: none; }
     </style>
 </head>
 <body>
 
     <header>
         <h1>US BANK LOGS</h1>
-        <p><strong>Fresh Accounts • High Balance • Instant Delivery</strong></p>
+        <p><strong>Fresh • High Balance • Instant Delivery</strong></p>
     </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="switchTab(0)">Major Banks</div>
+        <div class="tab" onclick="switchTab(1)">Small Credit Unions</div>
+    </div>
 
     <div class="container">
 
-        <div class="telegram">
-            <strong>JOIN OUR TELEGRAM FOR DAILY FRESH LOGS</strong><br><br>
-            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.8em;">
-                → t.me/yourcashgang ←
-            </a>
-        </div>
+        <!-- Major Banks Tab -->
+        <div id="tab0">
+            <div class="telegram">
+                <strong>JOIN OUR TELEGRAM FOR DAILY FRESH LOGS</strong><br><br>
+                <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.8em;">
+                    → t.me/yourcashgang ←
+                </a>
+            </div>
 
-        <h2 style="text-align:center; color:#00ff41;">Available US Bank Logs</h2>
+            <h2 style="text-align:center; color:#00ff41;">Major Banks</h2>
 
-        <div class="product">
-            
-            <div class="details">
-                <h3>Chase Bank - High Balance</h3>
-                <p>Online Access + Email + SSN + Phone • Balance: $18,000 – $65,000</p>
+            <div class="product">
+                
+                <div class="details">
+                    <h3>Chase Bank - High Balance</h3>
+                    <p>Online Access + Email + SSN • Balance: $18k – $65k</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$85</div>
+                    <button onclick="buyNow('Chase High Balance - $85')">Buy Now</button>
+                </div>
             </div>
-            <div style="text-align:right;">
-                <div class="price">$85</div>
-                <button onclick="buyNow('Chase High Balance - $85')">Buy Now</button>
-            </div>
-        </div>
 
-        <div class="product">
-            
-            <div class="details">
-                <h3>Wells Fargo - Business & Personal</h3>
-                <p>Full Login • Security Questions • Balance: $25,000+</p>
+            <div class="product">
+                
+                <div class="details">
+                    <h3>Wells Fargo - Business</h3>
+                    <p>Full Login • Balance: $25,000+</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$110</div>
+                    <button onclick="buyNow('Wells Fargo Business - $110')">Buy Now</button>
+                </div>
             </div>
-            <div style="text-align:right;">
-                <div class="price">$110</div>
-                <button onclick="buyNow('Wells Fargo - $110')">Buy Now</button>
-            </div>
-        </div>
 
-        <div class="product">
-            
-            <div class="details">
-                <h3>Bank of America - Verified</h3>
-                <p>Fullz Login + SSN + DOB • Balance: $12,000 – $85,000</p>
-            </div>
-            <div style="text-align:right;">
-                <div class="price">$70</div>
-                <button onclick="buyNow('Bank of America - $70')">Buy Now</button>
-            </div>
-        </div>
-
-        <div class="product">
-            
-            <div class="details">
-                <h3>US Bank + Cash App Combo</h3>
-                <p>Login + Linked CashApp • Balance: $15,000+</p>
-            </div>
-            <div style="text-align:right;">
-                <div class="price">$95</div>
-                <button onclick="buyNow('US Bank + Cash App - $95')">Buy Now</button>
+            <div class="product">
+                
+                <div class="details">
+                    <h3>Bank of America - Verified</h3>
+                    <p>Fullz Login • Balance: $12k – $85k</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$70</div>
+                    <button onclick="buyNow('Bank of America - $70')">Buy Now</button>
+                </div>
             </div>
         </div>
 
-        <div class="telegram">
-            <strong>ALL TRANSACTIONS HAPPEN ON TELEGRAM</strong><br><br>
+        <!-- Small Credit Unions Tab -->
+        <div id="tab1" class="hidden">
+            <h2 style="text-align:center; color:#00ff41;">Small Credit Unions</h2>
+            <p style="text-align:center; color:#ffcc00;">Lower detection rate • Great for beginners</p>
+
+            <div class="product">
+                
+                <div class="details">
+                    <h3>PenFed Credit Union</h3>
+                    <p>Full Online Access • High Limits • Balance: $8,000 – $35,000</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$65</div>
+                    <button onclick="buyNow('PenFed Credit Union - $65')">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="product">
+                
+                <div class="details">
+                    <h3>Navy Federal Credit Union</h3>
+                    <p>Premium Logs • Military Grade • Balance: $15,000 – $70,000</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$95</div>
+                    <button onclick="buyNow('Navy Federal CU - $95')">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="product">
+                
+                <div class="details">
+                    <h3>Alliant Credit Union</h3>
+                    <p>Easy Login • Balance: $7,000 – $28,000</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$55</div>
+                    <button onclick="buyNow('Alliant Credit Union - $55')">Buy Now</button>
+                </div>
+            </div>
+
+            <div class="product">
+                
+                <div class="details">
+                    <h3>State Employees Credit Union (SECU)</h3>
+                    <p>Very Clean Logs • Balance: $10,000 – $40,000</p>
+                </div>
+                <div style="text-align:right;">
+                    <div class="price">$75</div>
+                    <button onclick="buyNow('SECU - $75')">Buy Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="telegram" style="margin-top:50px;">
+            <strong>ALL PURCHASES GO THROUGH OUR TELEGRAM CHANNEL</strong><br><br>
             <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:2em;">
                 t.me/yourcashgang
             </a>
-            <p style="margin-top:15px;">Instant delivery • Replacement guarantee • Bulk discounts available</p>
+            <p style="margin-top:15px;">Instant delivery after payment • Replacement within 6 hours</p>
         </div>
 
         <p class="warning">
-            ⚠️ All logs are checked before sale. We only accept Bitcoin, USDT, and Monero.<br>
-            Message us on Telegram after payment.
+            ⚠️ All accounts are verified before sale. We only accept Bitcoin, USDT, and Monero.<br>
+            Message us on Telegram immediately after ordering.
         </p>
 
     </div>
 
     <script>
+        function switchTab(tabIndex) {
+            document.getElementById('tab0').classList.add('hidden');
+            document.getElementById('tab1').classList.add('hidden');
+            
+            document.querySelectorAll('.tab').forEach((tab, index) => {
+                if (index === tabIndex) {
+                    tab.classList.add('active');
+                } else {
+                    tab.classList.remove('active');
+                }
+            });
+
+            document.getElementById('tab' + tabIndex).classList.remove('hidden');
+        }
+
         function buyNow(item) {
-            alert("Order received for: " + item + "\n\nPlease contact us on Telegram to complete payment.");
+            alert("Order received for: " + item + "\n\nPlease go to our Telegram to complete payment.");
             window.open("https://t.me/yourcashgang", "_blank");
         }
     </script>
 
 </body>
 </html>
-
