@@ -19,6 +19,7 @@
             border-bottom: 4px solid #00ff41;
         }
         h1 { margin: 0; font-size: 3em; text-shadow: 0 0 10px #00ff41; }
+        
         .tabs {
             display: flex;
             justify-content: center;
@@ -40,6 +41,7 @@
             background: #00ff41;
             color: black;
         }
+
         .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
         
         .product {
@@ -77,8 +79,32 @@
             font-weight: bold;
             cursor: pointer;
             border-radius: 6px;
+            margin-top: 8px;
         }
         button:hover { background: #00cc33; }
+
+        .btc-box {
+            background: #1a1a1a;
+            border: 3px solid #f7931a;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        .btc-address {
+            background: #000;
+            color: #f7931a;
+            padding: 15px;
+            font-family: monospace;
+            word-break: break-all;
+            margin: 15px 0;
+            font-size: 1.1em;
+            border: 2px dashed #f7931a;
+        }
+        .copy-btn {
+            background: #f7931a;
+            color: black;
+        }
 
         .telegram {
             background: #0088cc;
@@ -169,7 +195,7 @@
                 
                 <div class="details">
                     <h3>PenFed Credit Union</h3>
-                    <p>Full Online Access • High Limits • Balance: $8,000 – $35,000</p>
+                    <p>Full Online Access • Balance: $8,000 – $35,000</p>
                 </div>
                 <div style="text-align:right;">
                     <div class="price">$65</div>
@@ -181,7 +207,7 @@
                 
                 <div class="details">
                     <h3>Navy Federal Credit Union</h3>
-                    <p>Premium Logs • Military Grade • Balance: $15,000 – $70,000</p>
+                    <p>Premium Logs • Balance: $15,000 – $70,000</p>
                 </div>
                 <div style="text-align:right;">
                     <div class="price">$95</div>
@@ -200,31 +226,35 @@
                     <button onclick="buyNow('Alliant Credit Union - $55')">Buy Now</button>
                 </div>
             </div>
-
-            <div class="product">
-                
-                <div class="details">
-                    <h3>State Employees Credit Union (SECU)</h3>
-                    <p>Very Clean Logs • Balance: $10,000 – $40,000</p>
-                </div>
-                <div style="text-align:right;">
-                    <div class="price">$75</div>
-                    <button onclick="buyNow('SECU - $75')">Buy Now</button>
-                </div>
-            </div>
         </div>
 
-        <div class="telegram" style="margin-top:50px;">
-            <strong>ALL PURCHASES GO THROUGH OUR TELEGRAM CHANNEL</strong><br><br>
+        <!-- Bitcoin Payment Section -->
+        <div class="btc-box">
+            <h2 style="color:#f7931a;">PAY WITH BITCOIN</h2>
+            <p>Send exact amount to the wallet below. Payment is automatic once confirmed.</p>
+            
+            <div class="btc-address" id="btcAddress">
+                bc1qxy2kdv3y2f3v6e4f8z9k7v5n8m2q3r6t7u8v9w0x
+            </div>
+            
+            <button class="copy-btn" onclick="copyBTCAddress()">Copy BTC Address</button>
+            <p style="margin-top:15px; font-size:0.9em; color:#aaa;">
+                Minimum order: $50<br>
+                Send only BTC to this address. No refunds for wrong amount.
+            </p>
+        </div>
+
+        <div class="telegram">
+            <strong>AFTER PAYMENT — SEND TXID TO OUR TELEGRAM</strong><br><br>
             <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:2em;">
                 t.me/yourcashgang
             </a>
-            <p style="margin-top:15px;">Instant delivery after payment • Replacement within 6 hours</p>
+            <p style="margin-top:15px;">We deliver logs within 10 minutes after confirmation</p>
         </div>
 
         <p class="warning">
-            ⚠️ All accounts are verified before sale. We only accept Bitcoin, USDT, and Monero.<br>
-            Message us on Telegram immediately after ordering.
+            ⚠️ All accounts are checked before sale. Replacement within 6 hours if login fails.<br>
+            We only accept Bitcoin, USDT, and Monero.
         </p>
 
     </div>
@@ -235,19 +265,27 @@
             document.getElementById('tab1').classList.add('hidden');
             
             document.querySelectorAll('.tab').forEach((tab, index) => {
-                if (index === tabIndex) {
-                    tab.classList.add('active');
-                } else {
-                    tab.classList.remove('active');
-                }
+                if (index === tabIndex) tab.classList.add('active');
+                else tab.classList.remove('active');
             });
 
             document.getElementById('tab' + tabIndex).classList.remove('hidden');
         }
 
         function buyNow(item) {
-            alert("Order received for: " + item + "\n\nPlease go to our Telegram to complete payment.");
+            alert("Order for " + item + " received!\n\nPlease send payment to the Bitcoin wallet shown above.\nThen message us on Telegram with the TXID.");
             window.open("https://t.me/yourcashgang", "_blank");
+        }
+
+        function copyBTCAddress() {
+            const address = document.getElementById("btcAddress").innerText;
+            navigator.clipboard.writeText(address).then(() => {
+                const originalText = event.target.innerText;
+                event.target.innerText = "COPIED!";
+                setTimeout(() => {
+                    event.target.innerText = originalText;
+                }, 2000);
+            });
         }
     </script>
 
