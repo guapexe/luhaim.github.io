@@ -7,66 +7,75 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0f0f0f;
-            color: #00ff00;
+            background-color: #0a0a0a;
+            color: #00ff41;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
         }
         header {
             background: linear-gradient(to right, #000, #1a1a1a);
-            padding: 30px;
+            padding: 40px;
             text-align: center;
-            border-bottom: 3px solid #00ff00;
+            border-bottom: 4px solid #00ff41;
         }
-        h1 { margin: 0; font-size: 2.8em; }
-        h2 { color: #00cc00; }
-        .container {
-            max-width: 1000px;
-            margin: 30px auto;
-            padding: 20px;
-        }
+        h1 { margin: 0; font-size: 3em; text-shadow: 0 0 10px #00ff41; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 20px; }
+        
         .product {
-            background: #1a1a1a;
-            border: 2px solid #00ff00;
-            border-radius: 8px;
+            background: #111111;
+            border: 2px solid #00ff41;
+            border-radius: 10px;
             padding: 20px;
-            margin: 20px 0;
+            margin: 25px 0;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .bank-logo {
+            width: 110px;
+            height: 70px;
+            object-fit: contain;
+            background: white;
+            padding: 8px;
+            border-radius: 6px;
+        }
+        .details {
+            flex: 1;
         }
         .price {
-            font-size: 1.8em;
-            color: #00ff00;
+            font-size: 2em;
+            color: #00ff41;
             font-weight: bold;
+            text-align: right;
+            min-width: 140px;
         }
         button {
-            background: #00ff00;
+            background: #00ff41;
             color: black;
             border: none;
-            padding: 12px 25px;
+            padding: 14px 30px;
             font-size: 1.1em;
             font-weight: bold;
             cursor: pointer;
-            border-radius: 5px;
+            border-radius: 6px;
+            margin-top: 10px;
         }
-        button:hover {
-            background: #00cc00;
-        }
+        button:hover { background: #00cc33; }
+
         .telegram {
             background: #0088cc;
             color: white;
             text-align: center;
-            padding: 25px;
-            font-size: 1.5em;
-            margin: 30px 0;
-            border-radius: 10px;
+            padding: 30px;
+            font-size: 1.6em;
+            margin: 40px 0;
+            border-radius: 12px;
         }
         .warning {
-            color: #ffaa00;
-            font-size: 0.9em;
+            color: #ffcc00;
             text-align: center;
-            margin-top: 40px;
+            margin: 50px 0;
+            font-size: 0.95em;
         }
     </style>
 </head>
@@ -74,25 +83,25 @@
 
     <header>
         <h1>US BANK LOGS</h1>
-        <p><strong>Fresh • Verified • High Balance • Instant Delivery</strong></p>
+        <p><strong>Fresh Accounts • High Balance • Instant Delivery</strong></p>
     </header>
 
     <div class="container">
 
         <div class="telegram">
-            <strong>JOIN OUR TELEGRAM FOR DAILY DROPS & UPDATES</strong><br><br>
-            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.6em;">
+            <strong>JOIN OUR TELEGRAM FOR DAILY FRESH LOGS</strong><br><br>
+            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; text-decoration:none; font-size:1.8em;">
                 → t.me/yourcashgang ←
             </a>
-            <p style="margin-top:15px; font-size:1.1em;">Fastest updates • Replacement guarantee • Bulk discounts</p>
         </div>
 
-        <h2 style="text-align:center;">Available Bank Logs - Updated 5 minutes ago</h2>
+        <h2 style="text-align:center; color:#00ff41;">Available US Bank Logs</h2>
 
         <div class="product">
-            <div>
+            
+            <div class="details">
                 <h3>Chase Bank - High Balance</h3>
-                <p>Online Access + Email + SSN + Phone • Balance: $18,000 - $45,000</p>
+                <p>Online Access + Email + SSN + Phone • Balance: $18,000 – $65,000</p>
             </div>
             <div style="text-align:right;">
                 <div class="price">$85</div>
@@ -101,31 +110,34 @@
         </div>
 
         <div class="product">
-            <div>
-                <h3>Wells Fargo - Business Account</h3>
-                <p>Full Login • Routing + Account Number • Balance: $27,000+</p>
+            
+            <div class="details">
+                <h3>Wells Fargo - Business & Personal</h3>
+                <p>Full Login • Security Questions • Balance: $25,000+</p>
             </div>
             <div style="text-align:right;">
                 <div class="price">$110</div>
-                <button onclick="buyNow('Wells Fargo Business - $110')">Buy Now</button>
+                <button onclick="buyNow('Wells Fargo - $110')">Buy Now</button>
             </div>
         </div>
 
         <div class="product">
-            <div>
+            
+            <div class="details">
                 <h3>Bank of America - Verified</h3>
-                <p>Fullz Login • Security Questions • Balance: $9,000 - $65,000</p>
+                <p>Fullz Login + SSN + DOB • Balance: $12,000 – $85,000</p>
             </div>
             <div style="text-align:right;">
-                <div class="price">$65</div>
-                <button onclick="buyNow('BoA Verified - $65')">Buy Now</button>
+                <div class="price">$70</div>
+                <button onclick="buyNow('Bank of America - $70')">Buy Now</button>
             </div>
         </div>
 
         <div class="product">
-            <div>
+            
+            <div class="details">
                 <h3>US Bank + Cash App Combo</h3>
-                <p>Login + Linked Cash App • Balance: $12,000+</p>
+                <p>Login + Linked CashApp • Balance: $15,000+</p>
             </div>
             <div style="text-align:right;">
                 <div class="price">$95</div>
@@ -133,27 +145,28 @@
             </div>
         </div>
 
-        <div class="telegram" style="margin-top:50px;">
-            <strong>ALL PURCHASES GO THROUGH OUR TELEGRAM</strong><br><br>
-            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:1.8em;">
+        <div class="telegram">
+            <strong>ALL TRANSACTIONS HAPPEN ON TELEGRAM</strong><br><br>
+            <a href="https://t.me/yourcashgang" target="_blank" style="color:white; font-size:2em;">
                 t.me/yourcashgang
             </a>
-            <p>Instant delivery after payment (Crypto only)</p>
+            <p style="margin-top:15px;">Instant delivery • Replacement guarantee • Bulk discounts available</p>
         </div>
 
         <p class="warning">
-            ⚠️ All accounts are checked before sale. Replacements provided within 6 hours if login fails.<br>
-            We only accept Bitcoin, USDT, and Monero.
+            ⚠️ All logs are checked before sale. We only accept Bitcoin, USDT, and Monero.<br>
+            Message us on Telegram after payment.
         </p>
 
     </div>
 
     <script>
         function buyNow(item) {
-            alert("Order for " + item + " has been received.\n\nPlease message us on Telegram:\nhttps://t.me/yourcashgang");
+            alert("Order received for: " + item + "\n\nPlease contact us on Telegram to complete payment.");
             window.open("https://t.me/yourcashgang", "_blank");
         }
     </script>
 
 </body>
 </html>
+
