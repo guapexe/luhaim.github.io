@@ -1,55 +1,53 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BCFJORDO - Vendor Links & Reseller Plugs</title>
+    <title>BCFJORDO - Vendor Links</title>
     <style>
         body {
-            margin: 0; padding: 0; background: #0a0a0a; color: #00ff9d; font-family: 'Courier New', monospace;
-            line-height: 1.6;
+            margin: 0; padding: 0; background: #0a0a0a; color: #00ff9d; 
+            font-family: 'Courier New', monospace; line-height: 1.6;
         }
         header {
             background: linear-gradient(45deg, #000, #111);
-            padding: 40px 20px;
+            padding: 50px 20px;
             text-align: center;
-            border-bottom: 3px solid #00ff9d;
+            border-bottom: 4px solid #00ff9d;
         }
         h1 {
-            margin: 0; font-size: 3.2em; text-transform: uppercase; letter-spacing: 4px;
-            text-shadow: 0 0 20px #00ff9d;
+            margin: 0; font-size: 3.5em; text-transform: uppercase; letter-spacing: 6px;
+            text-shadow: 0 0 25px #00ff9d;
         }
         .subtitle {
-            font-size: 1.3em; color: #00cc77; margin-top: 10px;
+            font-size: 1.5em; color: #00cc77; margin-top: 15px;
         }
         .container {
-            max-width: 1100px; margin: 40px auto; padding: 0 20px;
+            max-width: 1000px; margin: 50px auto; padding: 0 20px;
         }
-        .plug-card {
-            background: #111; border: 2px solid #00ff9d; border-radius: 8px;
-            padding: 25px; margin: 20px 0; box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+        .vendor-card {
+            background: #111; border: 2px solid #00ff9d; border-radius: 10px;
+            padding: 35px; margin: 25px 0; box-shadow: 0 0 20px rgba(0, 255, 157, 0.4);
+            text-align: center;
         }
-        .price {
-            font-size: 2em; color: #00ff9d; font-weight: bold; margin: 15px 0;
+        .vendor-card h2 {
+            color: #00ff9d; margin: 0 0 15px 0; font-size: 2em;
         }
         button {
-            background: #00ff9d; color: #000; border: none; padding: 14px 32px;
-            font-size: 1.1em; font-weight: bold; cursor: pointer; border-radius: 4px;
-            transition: all 0.3s;
+            background: #00ff9d; color: #000; border: none; padding: 16px 40px;
+            font-size: 1.2em; font-weight: bold; cursor: pointer; border-radius: 6px;
+            margin-top: 20px; transition: all 0.3s;
         }
         button:hover {
-            background: #00cc77; transform: scale(1.05);
+            background: #00cc77; transform: scale(1.08);
         }
-        .instagram {
-            background: #111; padding: 20px; text-align: center; border: 2px dashed #00ff9d;
-            margin: 30px 0; font-size: 1.4em;
+        .instagram-box {
+            background: #111; padding: 30px; text-align: center; border: 3px dashed #00ff9d;
+            margin: 40px 0; font-size: 1.6em; border-radius: 8px;
         }
         footer {
-            text-align: center; padding: 40px; background: #000; color: #00cc77;
-            margin-top: 50px;
-        }
-        .warning {
-            color: #ffcc00; font-size: 0.9em; text-align: center; margin: 20px 0;
+            text-align: center; padding: 50px; background: #000; color: #00cc77; margin-top: 60px;
         }
     </style>
 </head>
@@ -57,77 +55,48 @@
 
     <header>
         <h1>BCFJORDO</h1>
-        <p class="subtitle">PREMIUM VENDOR LINKS &amp; RESELLER PLUGS</p>
-        <p>Fast • Reliable • High Quality • Daily Updated</p>
+        <p class="subtitle">PREMIUM VENDOR LINKS FOR RESELLERS</p>
     </header>
 
     <div class="container">
 
-        <div class="instagram">
-            <strong>MAIN INSTAGRAM:</strong> <a href="https://instagram.com/bcfjordo" target="_blank" style="color:#00ff9d;">@bcfjordo</a><br>
-            <em>DM for custom orders • Follow for daily drops</em>
+        <div class="instagram-box">
+            <strong>OFFICIAL INSTAGRAM:</strong><br>
+            <a href="https://www.instagram.com/bcfjordo/" target="_blank" style="color:#00ff9d; text-decoration:none;">
+                @bcfjordo
+            </a>
+            <p style="margin-top:15px; font-size:0.9em;">DM for instant access to all vendor links</p>
         </div>
 
-        <h2 style="text-align:center; color:#00ff9d;">AVAILABLE VENDOR PLUGS</h2>
-
-        <div class="plug-card">
-            <h3>🔥 Credit Card Fullz + SSN + DOB Plug</h3>
-            <p>Fresh US/UK/EU fullz • High balance cards • Updated every 6 hours</p>
-            <div class="price">$450</div>
-            <button onclick="buyNow('Fullz Plug')">Buy Now - Instant Access</button>
+        <div class="vendor-card">
+            <h2>📱 ELECTRONIC VENDOR</h2>
+            <p>Latest iPhones, MacBooks, Gaming Consoles, Smart Watches &amp; more.<br>
+            High quality stock • Fast shipping • Daily restocks.</p>
+            <button onclick="getVendor('electronics')">Get Electronic Vendor Link</button>
         </div>
 
-        <div class="plug-card">
-            <h3>💳 Amazon &amp; Retail Carding Vendor Links</h3>
-            <p>Working methods + private vendor links for electronics, gift cards &amp; sneakers</p>
-            <div class="price">$320</div>
-            <button onclick="buyNow('Amazon Carding Plug')">Buy Now - Instant Access</button>
+        <div class="vendor-card">
+            <h2>👟 CLOTHES VENDOR</h2>
+            <p>Designer streetwear, sneakers, hoodies, jackets &amp; luxury brands.<br>
+            Top tier quality • Competitive wholesale prices.</p>
+            <button onclick="getVendor('clothes')">Get Clothes Vendor Link</button>
         </div>
-
-        <div class="plug-card">
-            <h3>🏦 Bank Login + Cashout Methods Pack</h3>
-            <p>High balance bank logins + step-by-step cashout guides (2025 updated)</p>
-            <div class="price">$650</div>
-            <button onclick="buyNow('Bank Logins Plug')">Buy Now - Instant Access</button>
-        </div>
-
-        <div class="plug-card">
-            <h3>📦 Reshipping + Drop Service Plug</h3>
-            <p>Trusted US &amp; EU drops • Fast turnaround • No questions asked</p>
-            <div class="price">$280</div>
-            <button onclick="buyNow('Reshipping Plug')">Buy Now - Instant Access</button>
-        </div>
-
-        <div class="plug-card">
-            <h3>🌐 Full Reseller Package (All Plugs)</h3>
-            <p>Everything above + bonus documents &amp; private Telegram group access</p>
-            <div class="price">$1,200</div>
-            <button onclick="buyNow('Full Reseller Package')">Buy Full Package</button>
-        </div>
-
-        <p class="warning">
-            ⚠️ All links are replaced every 24-48 hours for security.<br>
-            Payment accepted via BTC, USDT, XMR only.<br>
-            No refunds. Access delivered instantly after payment.
-        </p>
 
     </div>
 
     <footer>
-        <p><strong>@bcfjordo</strong> — The #1 Source for Resellers • 2025</p>
-        <p>DM on Instagram for custom vendor requests</p>
+        <p><strong>@bcfjordo</strong> — Best Reseller Plugs 2025</p>
+        <p>Follow on Instagram for daily restocks and new vendor drops</p>
     </footer>
 
     <script>
-        function buyNow(product) {
-            alert(`✅ Order for "${product}" received!\n\nPayment address has been sent to @bcfjordo on Instagram.\n\nSend payment and reply with your TXID for instant access.`);
-            window.open("https://instagram.com/bcfjordo", "_blank");
+        function getVendor(type) {
+            alert("✅ Redirecting you to @bcfjordo on Instagram...\n\nSend a direct message with '" + type.toUpperCase() + "' to get instant access to the vendor link.");
+            window.open("https://www.instagram.com/bcfjordo/", "_blank");
         }
 
-        // Fake live counter
-        console.log("%cBCFJORDO Vendor Shop Loaded - All links active", "color:#00ff9d; font-size:14px");
+        console.log("%cBCFJORDO Vendor Shop Loaded - Electronics & Clothes Plugs Active", "color:#00ff9d; font-size:14px");
     </script>
 
 </body>
 </html>
-
